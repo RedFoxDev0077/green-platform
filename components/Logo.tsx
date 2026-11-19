@@ -1,26 +1,46 @@
-/** Monogram: a fine arch (a cloche / a mountain line) cradling a single leaf. */
-export function Mark({ className = "", draw = false }: { className?: string; draw?: boolean }) {
-  const s = draw ? "draw" : "";
+import Image from "next/image";
+
+/** Emblem only (olive branch, sun and waves), cut from the client's logo. */
+export function Mark({ className = "", tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
   return (
-    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden="true">
-      <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" className={s} opacity=".55" />
-      <path d="M14 42 C14 28 22 18 32 18 C42 18 50 28 50 42" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" className={s} />
-      <path d="M11 42 H53" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" className={s} />
-      <path d="M32 40 C26 34 27 26 32 22 C37 26 38 34 32 40 Z" stroke="currentColor" strokeWidth="1.2" className={s} />
-      <path d="M32 40 V25" stroke="currentColor" strokeWidth="1" className={s} />
-    </svg>
+    <Image
+      src={tone === "light" ? "/brand/mark-light.png" : "/brand/mark.png"}
+      alt=""
+      width={1176}
+      height={788}
+      className={`h-auto ${className}`}
+      aria-hidden="true"
+    />
   );
 }
 
+/** Horizontal lockup for the header and footer: emblem + wordmark. */
 export function Logo({ className = "", tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
-  const color = tone === "light" ? "text-ivory-50" : "text-forest-900";
+  const light = tone === "light";
   return (
-    <span className={`inline-flex items-center gap-3 ${color} ${className}`}>
-      <Mark className="h-9 w-9 text-champagne-500" />
-      <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.45rem] tracking-[0.02em]">Green Platform</span>
-        <span className="eyebrow mt-1 !text-[0.55rem] !tracking-[0.34em] opacity-70">Private Catering</span>
-      </span>
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+      <Mark tone={tone} className="w-12 md:w-14" />
+      <Image
+        src={light ? "/brand/wordmark-light.png" : "/brand/wordmark.png"}
+        alt="Mareterra"
+        width={1560}
+        height={306}
+        priority
+        className="h-auto w-[132px] md:w-[150px]"
+      />
     </span>
+  );
+}
+
+/** Full stacked logo with tagline — used in the preloader and footer. */
+export function FullLogo({ className = "", tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
+  return (
+    <Image
+      src={tone === "light" ? "/brand/logo-light.png" : "/brand/logo.png"}
+      alt="Mareterra — Mediterranean Cuisine, Switzerland"
+      width={1572}
+      height={1176}
+      className={`h-auto ${className}`}
+    />
   );
 }

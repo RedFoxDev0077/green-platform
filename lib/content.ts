@@ -14,15 +14,15 @@ export const experiences: Experience[] = [
     slug: "private-dining",
     title: "Private Dining",
     kicker: "At your table",
-    text: "A tasting menu composed for you and served in your home, chalet or villa. Our chef and maître d' handle everything, down to the last glass.",
-    image: "/img/salmon.jpg",
+    text: "A Mediterranean tasting menu composed for you and served in your home, chalet or villa. Our chef and maître d' take care of everything, down to the last glass.",
+    image: "/img/prawns.jpg",
     guests: "2 – 24 guests",
   },
   {
     slug: "weddings",
     title: "Weddings & Celebrations",
     kicker: "Once in a lifetime",
-    text: "From the welcome apéro to the late-night bites. Each course is designed around your story, the season and the venue.",
+    text: "From the welcome apéritivo to the late-night bites, a long Mediterranean feast designed around your story and the season.",
     image: "/img/wedding.jpg",
     guests: "30 – 250 guests",
   },
@@ -30,24 +30,24 @@ export const experiences: Experience[] = [
     slug: "corporate",
     title: "Corporate & Receptions",
     kicker: "Impress, effortlessly",
-    text: "Board dinners, product launches and client receptions, run with Swiss precision and a calm, discreet team.",
+    text: "Board dinners, launches and client receptions with the warmth of the South and the precision of Switzerland.",
     image: "/img/reception.jpg",
     guests: "10 – 400 guests",
   },
   {
-    slug: "apero",
-    title: "Apéro Riche & Cocktail",
+    slug: "aperitivo",
+    title: "Apéritivo & Cocktail",
     kicker: "Standing, sparkling",
-    text: "Elegant bites, a curated bar and signature cocktails. Made for long summer evenings and lively gatherings.",
+    text: "Mezze, crudi and finger food with a curated bar of spritz, Mediterranean wines and signature cocktails.",
     image: "/img/cocktail.jpg",
     guests: "20 – 300 guests",
   },
   {
-    slug: "chalet",
-    title: "Chalet & Villa Season",
+    slug: "villa",
+    title: "Villa & Lakeside Season",
     kicker: "Your private chef",
-    text: "A dedicated chef for the ski week or the lakeside summer: breakfast to dinner, planned around your days.",
-    image: "/img/alpine.jpg",
+    text: "A dedicated chef for your summer by the lake or your winter in the mountains: breakfast to dinner, planned around your days.",
+    image: "/img/lake.jpg",
     guests: "Full stays",
   },
 ];
@@ -57,36 +57,36 @@ export type MenuCourse = { id: string; label: string; image: string; dishes: Dis
 
 export const menu: MenuCourse[] = [
   {
-    id: "apero",
-    label: "Apéro",
+    id: "mezze",
+    label: "Mezze",
     image: "/img/figs.jpg",
     dishes: [
-      { name: "Alpine trout tartare", note: "Cucumber, dill crème, rye crisp", tags: ["Lake"] },
-      { name: "Gruyère AOP gougères", note: "Warm, with black truffle honey", tags: ["Veg"] },
-      { name: "Fig & goat cheese tartlet", note: "Thyme, walnut, aged balsamic", tags: ["Veg"] },
-      { name: "Beef tataki", note: "Smoked salt, yuzu kosho, shiso" },
+      { name: "Burrata & heirloom tomatoes", note: "Basil oil, aged balsamic, sea salt", tags: ["Veg"] },
+      { name: "Whipped feta", note: "Wild thyme honey, pistachio, warm pita", tags: ["Veg"] },
+      { name: "Smoky baba ganoush", note: "Pomegranate, tahini, za'atar flatbread", tags: ["Vegan"] },
+      { name: "Fig, prosciutto & olives", note: "Taggiasca olives, rosemary grissini" },
     ],
   },
   {
-    id: "starters",
-    label: "Starters",
-    image: "/img/starter.jpg",
+    id: "crudo",
+    label: "Crudo & Starters",
+    image: "/img/prawns.jpg",
     dishes: [
-      { name: "Garden beetroot", note: "Textures of beet, horseradish, hazelnut", tags: ["Vegan"] },
-      { name: "Lake Geneva perch", note: "Beurre noisette, capers, lemon pearls", tags: ["Lake"] },
-      { name: "Soft-poached farm egg", note: "Morels, asparagus, vin jaune sauce", tags: ["Veg"] },
-      { name: "Wild herb velouté", note: "Sorrel, crème fraîche, chive oil", tags: ["Veg"] },
+      { name: "Sea bream crudo", note: "Blood orange, fennel, Sicilian olive oil", tags: ["Sea"] },
+      { name: "Grilled red prawns", note: "Garlic, chili, lemon, parsley", tags: ["Sea"] },
+      { name: "Octopus carpaccio", note: "Capers, celery, lemon zest", tags: ["Sea"] },
+      { name: "Charred artichokes", note: "Mint, gremolata, aged pecorino", tags: ["Veg"] },
     ],
   },
   {
     id: "mains",
     label: "Mains",
-    image: "/img/salmon.jpg",
+    image: "/img/paella.jpg",
     dishes: [
-      { name: "Swiss beef fillet", note: "Pommes Anna, glazed shallots, jus" },
-      { name: "Crisp-skin char", note: "Fennel, saffron beurre blanc, samphire", tags: ["Lake"] },
-      { name: "Free-range poultry", note: "Morel cream, spring vegetables" },
-      { name: "Celeriac 'steak'", note: "Black garlic, barley risotto, herbs", tags: ["Vegan"] },
+      { name: "Paella del mar", note: "Saffron rice, mussels, prawns, aioli", tags: ["Sea"] },
+      { name: "Salt-baked sea bass", note: "Lemon, herbs, salsa verde", tags: ["Sea"] },
+      { name: "Slow-roasted lamb", note: "Rosemary, garlic, smoked aubergine" },
+      { name: "Hand-made orecchiette", note: "Broccoli rabe, chili, toasted breadcrumbs", tags: ["Veg"] },
     ],
   },
   {
@@ -94,30 +94,30 @@ export const menu: MenuCourse[] = [
     label: "Desserts",
     image: "/img/dessert.jpg",
     dishes: [
-      { name: "Grand cru Swiss chocolate", note: "Caramel, cocoa nib, sea salt" },
-      { name: "Raspberry & vanilla", note: "Mille-feuille, Madagascar vanilla", tags: ["Veg"] },
-      { name: "Meringue & double crème", note: "Crème double de la Gruyère, wild berries", tags: ["Veg"] },
-      { name: "Petits fours", note: "With coffee and digestifs" },
+      { name: "Olive oil cake", note: "Amalfi lemon, mascarpone, candied peel", tags: ["Veg"] },
+      { name: "Pistachio tiramisù", note: "Espresso, Bronte pistachio", tags: ["Veg"] },
+      { name: "Crema catalana", note: "Orange blossom, burnt sugar", tags: ["Veg"] },
+      { name: "Baklava & petits fours", note: "With coffee and limoncello" },
     ],
   },
 ];
 
 export const pillars = [
   {
-    title: "Seasonal & local",
-    text: "Menus follow the Swiss seasons. We cook with produce from farms, dairies and fisheries we know by name.",
+    title: "Mare: the sea",
+    text: "Line-caught fish and shellfish, chosen fresh and treated simply: fire, lemon and the best olive oil.",
   },
   {
-    title: "Mindful kitchen",
-    text: "Whole-ingredient cooking, planned portions and reusable service ware. Generous for you, gentle on the land.",
+    title: "Terra: the land",
+    text: "Sun-ripened vegetables, herbs and grains, from Mediterranean growers and Swiss farms we know by name.",
   },
   {
-    title: "Discreet service",
-    text: "Our team works quietly in the background, so you can stay with your guests.",
+    title: "Generous, never heavy",
+    text: "Mediterranean cooking is about sharing. Abundant tables, light flavours and dishes made to be passed around.",
   },
   {
     title: "Fully bespoke",
-    text: "No fixed packages. Every menu is written for your guests, dietary needs and setting.",
+    text: "No fixed packages. Every menu is written for your guests, their dietary needs and the setting.",
   },
 ];
 
@@ -130,7 +130,7 @@ export const processSteps = [
   {
     step: "02",
     title: "Menu design",
-    text: "Our chef writes a proposal for your event. For larger occasions we hold a private tasting.",
+    text: "Our chef writes a Mediterranean proposal for your event. For larger occasions we hold a private tasting.",
   },
   {
     step: "03",
@@ -151,15 +151,15 @@ export const faqs = [
   },
   {
     q: "How far in advance should we book?",
-    a: "For private dinners, two to three weeks is usually enough. For weddings and large receptions, we recommend contacting us 3 to 9 months ahead, especially for summer and the ski season.",
+    a: "For private dinners, two to three weeks is usually enough. For weddings and large receptions, we recommend contacting us 3 to 9 months ahead, especially for summer.",
   },
   {
     q: "Can you accommodate dietary requirements?",
-    a: "Yes. Vegetarian, vegan, gluten-free, lactose-free, halal and allergy-specific menus are designed with the same care as every other course.",
+    a: "Yes. Mediterranean cooking is naturally rich in vegetarian and vegan dishes, and we also prepare gluten-free, lactose-free, halal and allergy-specific menus with the same care.",
   },
   {
     q: "Do you provide staff, tableware and drinks?",
-    a: "We can provide everything: chefs, waiting staff, sommelier, tableware, linen and a curated wine and cocktail selection. Or just the parts you need.",
+    a: "We can provide everything: chefs, waiting staff, sommelier, tableware, linen and a curated Mediterranean wine and cocktail selection. Or just the parts you need.",
   },
   {
     q: "Is a tasting possible before the event?",
@@ -175,16 +175,17 @@ export const eventTypes = [
   "Private dinner",
   "Wedding",
   "Corporate event",
-  "Apéro / cocktail",
-  "Chalet / villa stay",
+  "Apéritivo / cocktail",
+  "Villa / chalet stay",
   "Something else",
 ];
 
 export const preferences = [
   "Tasting menu",
   "Sharing / family style",
-  "Buffet",
-  "Standing apéro",
+  "Mezze buffet",
+  "Standing apéritivo",
+  "Seafood focus",
   "Vegetarian focus",
   "Vegan options",
   "Gluten-free",

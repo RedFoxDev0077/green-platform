@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Green Platform palette: forest, ivory, champagne ── */
-  --color-forest-950: #07140f;
-  --color-forest-900: #0c1f17; /* primary dark */
-  --color-forest-800: #122c21;
-  --color-forest-700: #1a3d2e;
-  --color-forest-600: #2a5641;
-  --color-forest-400: #6f8f7c;
-  --color-forest-200: #c9d6cc;
+  /* ── Mareterra palette (from the logo): deep sea navy, sand gold, olive, warm ivory ── */
+  --color-navy-950: #0b1526;
+  --color-navy-900: #152540; /* primary dark — logo wordmark */
+  --color-navy-800: #1c2f50;
+  --color-navy-700: #263d63;
+  --color-navy-600: #35527f;
+  --color-navy-400: #7d8fae;
+  --color-navy-200: #cfd8e6;
 
-  --color-ivory-50: #fbf8f2;
-  --color-ivory-100: #f5efe4; /* primary light */
-  --color-ivory-200: #ebe2d2;
-  --color-ivory-300: #ddd0b9;
+  --color-ivory-50: #fcf9f5;
+  --color-ivory-100: #f7f2ec; /* primary light — logo background */
+  --color-ivory-200: #eee6da;
+  --color-ivory-300: #e0d4c2;
 
-  --color-champagne-700: #8d6f3f;
-  --color-champagne-600: #a4844f;
-  --color-champagne-500: #c2a16b; /* accent */
-  --color-champagne-300: #dcc59c;
-  --color-champagne-100: #f2e8d5;
+  --color-sand-700: #8a6c3e;
+  --color-sand-600: #a1814f;
+  --color-sand-500: #b8986a; /* accent — logo sun */
+  --color-sand-300: #dac7a3;
+  --color-sand-100: #f1e8d8;
 
-  --color-ink: #141a16;
-  --color-muted: #5d665f;
-  --color-line: #e3dacb;
+  --color-olive-700: #5a5e3e;
+  --color-olive-500: #858a62; /* logo olive branch */
+  --color-olive-200: #dfe0cd;
+
+  --color-ink: #141b29;
+  --color-muted: #5f6676;
+  --color-line: #e5dccf;
 
   --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
@@ -62,8 +66,8 @@ textarea {
 }
 
 ::selection {
-  background: var(--color-champagne-300);
-  color: var(--color-forest-950);
+  background: var(--color-sand-300);
+  color: var(--color-navy-950);
 }
 
 .font-display {
@@ -164,26 +168,26 @@ textarea {
   animation: cue 2.2s var(--ease-lux) infinite;
 }
 
+/* Logo reveal: sweeps in from the top like a rising sun, with a soft blur-to-focus */
+@keyframes logoReveal {
+  from { clip-path: inset(0 0 100% 0); filter: blur(6px); opacity: 0; transform: translateY(10px); }
+  to { clip-path: inset(0 0 0 0); filter: blur(0); opacity: 1; transform: none; }
+}
+.intro-logo {
+  animation: logoReveal 1.2s var(--ease-lux) 0.1s both;
+}
+
 /* Preloader — only rendered visibly on first visit (html.intro set before paint) */
 .preloader { display: none; }
 html.intro .preloader { display: flex; }
 html.intro { --intro: 1.55s; }
-@keyframes drawStroke {
-  to { stroke-dashoffset: 0; }
-}
-.draw {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  animation: drawStroke 1.4s var(--ease-lux) forwards;
-}
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .kenburns, .line-mask > span, .fadeup, .marquee, .cue, .draw {
+  .kenburns, .line-mask > span, .fadeup, .marquee, .cue, .intro-logo {
     animation: none !important;
   }
-  .draw { stroke-dashoffset: 0; }
 }

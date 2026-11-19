@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Mark } from "./Logo";
+import { FullLogo } from "./Logo";
 
 /**
  * Brief branded intro, first visit per session only.
@@ -21,7 +21,7 @@ export function Preloader() {
       sessionStorage.setItem("gp-intro", "1");
     } catch {}
     root.style.overflow = "hidden";
-    const t1 = setTimeout(() => setPhase("hide"), 1450);
+    const t1 = setTimeout(() => setPhase("hide"), 1500);
     const t2 = setTimeout(() => {
       setPhase("gone");
       root.style.overflow = "";
@@ -39,19 +39,11 @@ export function Preloader() {
   return (
     <div
       aria-hidden="true"
-      className="preloader fixed inset-0 z-[100] items-center justify-center bg-forest-950 transition-[clip-path] duration-[900ms] ease-[cubic-bezier(.77,0,.18,1)]"
+      className="preloader fixed inset-0 z-[100] items-center justify-center bg-navy-950 transition-[clip-path] duration-[900ms] ease-[cubic-bezier(.77,0,.18,1)]"
       style={{ clipPath: phase === "hide" ? "inset(0 0 100% 0)" : "inset(0 0 0% 0)" }}
     >
-      <div className="flex flex-col items-center gap-5 text-champagne-500">
-        <Mark draw className="h-20 w-20" />
-        <span className="line-mask">
-          <span className="font-display text-3xl text-ivory-50" style={{ animationDelay: ".35s" }}>
-            Green Platform
-          </span>
-        </span>
-        <span className="eyebrow fadeup text-champagne-300/80" style={{ animationDelay: ".7s" }}>
-          Private Catering · Switzerland
-        </span>
+      <div className="intro-logo w-[min(78vw,340px)]">
+        <FullLogo tone="light" className="w-full" />
       </div>
     </div>
   );

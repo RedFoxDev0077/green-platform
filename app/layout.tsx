@@ -22,27 +22,28 @@ const sans = Manrope({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0c1f17",
+  themeColor: "#152540",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | ${site.tagline} in Switzerland`,
+    default: `${site.name} | Mediterranean Private Catering in Switzerland`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
   keywords: [
+    "Mediterranean catering Switzerland",
     "private catering Switzerland",
     "private chef Switzerland",
     "wedding catering Switzerland",
-    "chalet chef",
+    "Mediterranean private chef",
     "event catering Zurich",
     "catering Geneva",
-    "apéro riche",
+    "paella catering",
     "fine dining catering",
-    "Green Platform",
+    "Mareterra",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -59,7 +60,6 @@ export const metadata: Metadata = {
     description: site.description,
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.svg" },
 };
 
 // Runs before paint: decides whether the first-visit intro plays (avoids any flash).
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description: site.description,
     email: site.contact.email,
     ...(site.contact.phone ? { telephone: site.contact.phone } : {}),
-    servesCuisine: ["Swiss", "French", "Contemporary European"],
+    servesCuisine: ["Mediterranean", "Italian", "Spanish", "Greek"],
     areaServed: { "@type": "Country", name: "Switzerland" },
     slogan: site.slogan,
   };

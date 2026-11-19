@@ -1,7 +1,7 @@
-# Green Platform — Private Catering Website
+# Mareterra — Mediterranean Private Catering
 
-Luxury one-page landing site for **Green Platform**, a Swiss private catering house
-(private dinners, weddings, chalet & villa stays, corporate receptions).
+Luxury one-page landing site for **Mareterra**, a Mediterranean private catering house in Switzerland
+(private dinners, weddings, villa stays, corporate receptions).
 
 ## Stack
 
@@ -25,7 +25,7 @@ npm run build && npm start
 | Experiences, sample menu, philosophy, process, FAQ, form options | `lib/content.ts` |
 | Colours & fonts | `app/globals.css`, `app/layout.tsx` |
 | Photos | `public/img/*` (keep the same filenames to swap) |
-| Logo / monogram | `components/Logo.tsx`, `public/icon.svg` |
+| Logo (full, emblem, wordmark; dark + light) | `public/brand/*`, `components/Logo.tsx`, `app/icon.png` |
 
 ## Features
 

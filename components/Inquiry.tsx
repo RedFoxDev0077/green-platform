@@ -85,8 +85,8 @@ export function Inquiry() {
   }
 
   const field =
-    "w-full rounded-[2px] border border-line bg-ivory-50 px-4 py-3.5 text-base text-ink outline-none transition placeholder:text-muted/50 focus:border-champagne-500 focus:ring-2 focus:ring-champagne-500/20";
-  const label = "eyebrow mb-2.5 block !text-[0.62rem] text-forest-900/70";
+    "w-full rounded-[2px] border border-line bg-ivory-50 px-4 py-3.5 text-base text-ink outline-none transition placeholder:text-muted/50 focus:border-sand-500 focus:ring-2 focus:ring-sand-500/20";
+  const label = "eyebrow mb-2.5 block !text-[0.62rem] text-navy-900/70";
   const err = "mt-1.5 text-xs text-red-700";
   const today = new Date().toISOString().slice(0, 10);
 
@@ -96,9 +96,9 @@ export function Inquiry() {
         {/* Left: invitation */}
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="eyebrow text-champagne-600">Plan your event</p>
-            <h2 className="font-display mt-5 text-[clamp(2.4rem,5vw,4.6rem)] leading-[0.98] text-forest-900">
-              Let&rsquo;s create something <em className="text-champagne-600">unforgettable.</em>
+            <p className="eyebrow text-sand-600">Plan your event</p>
+            <h2 className="font-display mt-5 text-[clamp(2.4rem,5vw,4.6rem)] leading-[0.98] text-navy-900">
+              Let&rsquo;s create something <em className="text-sand-600">unforgettable.</em>
             </h2>
             <p className="mt-6 max-w-md leading-relaxed text-muted">
               Share a few details. It takes under a minute. Our chef replies personally within 24 hours
@@ -106,10 +106,10 @@ export function Inquiry() {
             </p>
           </Reveal>
           <Reveal delay={150} className="relative mt-10 hidden aspect-[5/4] overflow-hidden rounded-[2px] lg:block">
-            <Image src="/img/dessert.jpg" alt="Chocolate dessert with caramel being poured" fill sizes="35vw" className="object-cover" />
+            <Image src="/img/paella.jpg" alt="A pan of seafood paella with lemon" fill sizes="35vw" className="object-cover" />
           </Reveal>
           <Reveal delay={200}>
-            <div className="mt-8 space-y-2 text-sm text-forest-900">
+            <div className="mt-8 space-y-2 text-sm text-navy-900">
               <a href={`mailto:${site.contact.email}`} className="link-underline block w-fit">{site.contact.email}</a>
               {site.contact.phone && <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="link-underline block w-fit">{site.contact.phone}</a>}
               <p className="text-muted">{site.contact.area}</p>
@@ -135,9 +135,9 @@ export function Inquiry() {
                   aria-current={i === step ? "step" : undefined}
                 >
                   <span className="h-[2px] w-full overflow-hidden bg-line">
-                    <span className="block h-full bg-champagne-500 transition-all duration-700" style={{ width: i <= step ? "100%" : "0%" }} />
+                    <span className="block h-full bg-sand-500 transition-all duration-700" style={{ width: i <= step ? "100%" : "0%" }} />
                   </span>
-                  <span className={`hidden text-[0.7rem] uppercase tracking-[0.18em] sm:block ${i === step ? "text-forest-900" : "text-muted/70"}`}>
+                  <span className={`hidden text-[0.7rem] uppercase tracking-[0.18em] sm:block ${i === step ? "text-navy-900" : "text-muted/70"}`}>
                     {String(i + 1).padStart(2, "0")} · {s}
                   </span>
                 </button>
@@ -147,7 +147,7 @@ export function Inquiry() {
             <div key={step} className="fadeup mt-10 min-h-[320px]">
               {step === 0 && (
                 <fieldset>
-                  <legend className="font-display text-3xl text-forest-900">What are we celebrating?</legend>
+                  <legend className="font-display text-3xl text-navy-900">What are we celebrating?</legend>
                   <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
                     {eventTypes.map((t) => (
                       <button
@@ -160,8 +160,8 @@ export function Inquiry() {
                         aria-pressed={d.eventType === t}
                         className={`rounded-[2px] border px-4 py-5 text-left text-sm transition-all duration-300 ${
                           d.eventType === t
-                            ? "border-forest-900 bg-forest-900 text-ivory-50"
-                            : "border-line bg-ivory-100/50 text-forest-900 hover:border-champagne-500"
+                            ? "border-navy-900 bg-navy-900 text-ivory-50"
+                            : "border-line bg-ivory-100/50 text-navy-900 hover:border-sand-500"
                         }`}
                       >
                         {t}
@@ -174,7 +174,7 @@ export function Inquiry() {
 
               {step === 1 && (
                 <fieldset className="grid gap-6">
-                  <legend className="font-display mb-1 text-3xl text-forest-900">Tell us the essentials.</legend>
+                  <legend className="font-display mb-1 text-3xl text-navy-900">Tell us the essentials.</legend>
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
                       <label htmlFor="date" className={label}>Preferred date</label>
@@ -182,12 +182,12 @@ export function Inquiry() {
                     </div>
                     <div>
                       <label htmlFor="location" className={label}>Location / venue</label>
-                      <input id="location" placeholder="e.g. Verbier, Zurich, Lake Geneva…" value={d.location} onChange={(e) => set("location", e.target.value)} className={field} />
+                      <input id="location" placeholder="e.g. Geneva, Zurich, Lugano…" value={d.location} onChange={(e) => set("location", e.target.value)} className={field} />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="guests" className={label}>
-                      Number of guests: <span className="font-display !text-base normal-case tracking-normal text-champagne-700">{d.guests >= 300 ? "300+" : d.guests}</span>
+                      Number of guests: <span className="font-display !text-base normal-case tracking-normal text-sand-700">{d.guests >= 300 ? "300+" : d.guests}</span>
                     </label>
                     <input
                       id="guests"
@@ -197,7 +197,7 @@ export function Inquiry() {
                       step={1}
                       value={d.guests}
                       onChange={(e) => set("guests", Number(e.target.value))}
-                      className="w-full accent-[var(--color-forest-900)]"
+                      className="w-full accent-[var(--color-navy-900)]"
                     />
                     <div className="mt-1 flex justify-between text-xs text-muted"><span>2</span><span>300+</span></div>
                   </div>
@@ -206,7 +206,7 @@ export function Inquiry() {
 
               {step === 2 && (
                 <fieldset>
-                  <legend className="font-display text-3xl text-forest-900">How would you like it served?</legend>
+                  <legend className="font-display text-3xl text-navy-900">How would you like it served?</legend>
                   <p className="mt-2 text-sm text-muted">Choose as many as you like. Optional.</p>
                   <div className="mt-7 flex flex-wrap gap-2.5">
                     {preferences.map((p) => {
@@ -218,7 +218,7 @@ export function Inquiry() {
                           aria-pressed={on}
                           onClick={() => set("prefs", on ? d.prefs.filter((x) => x !== p) : [...d.prefs, p])}
                           className={`rounded-full border px-4 py-2.5 text-sm transition-all duration-300 ${
-                            on ? "border-champagne-500 bg-champagne-500 text-forest-950" : "border-line text-forest-900 hover:border-champagne-500"
+                            on ? "border-sand-500 bg-sand-500 text-navy-950" : "border-line text-navy-900 hover:border-sand-500"
                           }`}
                         >
                           {on ? "✓ " : ""}
@@ -236,7 +236,7 @@ export function Inquiry() {
 
               {step === 3 && (
                 <fieldset className="grid gap-5">
-                  <legend className="font-display mb-1 text-3xl text-forest-900">Where can we reach you?</legend>
+                  <legend className="font-display mb-1 text-3xl text-navy-900">Where can we reach you?</legend>
                   <div>
                     <label htmlFor="name" className={label}>Full name *</label>
                     <input id="name" autoComplete="name" value={d.name} onChange={(e) => set("name", e.target.value)} className={field} />
@@ -255,16 +255,16 @@ export function Inquiry() {
                     </div>
                   </div>
                   <label className="flex items-start gap-3 text-xs leading-relaxed text-muted">
-                    <input type="checkbox" checked={d.consent} onChange={(e) => set("consent", e.target.checked)} className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-forest-900)]" />
+                    <input type="checkbox" checked={d.consent} onChange={(e) => set("consent", e.target.checked)} className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--color-navy-900)]" />
                     <span>
                       I agree that my details are used to answer this request, as described in the{" "}
-                      <Link href="/privacy" className="text-champagne-700 underline">privacy policy</Link>. *
+                      <Link href="/privacy" className="text-sand-700 underline">privacy policy</Link>. *
                     </span>
                   </label>
                   {errors.consent && <p className={`${err} -mt-3`}>{errors.consent}</p>}
 
-                  <div className="rounded-[2px] bg-ivory-100 p-4 text-sm text-forest-900/80">
-                    <span className="eyebrow !text-[0.6rem] text-champagne-700">Your request</span>
+                  <div className="rounded-[2px] bg-ivory-100 p-4 text-sm text-navy-900/80">
+                    <span className="eyebrow !text-[0.6rem] text-sand-700">Your request</span>
                     <p className="mt-1.5">
                       {d.eventType} · {d.guests >= 300 ? "300+" : d.guests} guests
                       {d.date && ` · ${new Date(d.date + "T12:00").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}`}
@@ -279,14 +279,14 @@ export function Inquiry() {
               <button
                 type="button"
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
-                className={`text-sm text-forest-900/70 transition hover:text-forest-900 ${step === 0 ? "invisible" : ""}`}
+                className={`text-sm text-navy-900/70 transition hover:text-navy-900 ${step === 0 ? "invisible" : ""}`}
               >
                 ← Back
               </button>
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="group inline-flex items-center gap-3 rounded-full bg-forest-900 px-7 py-4 text-sm font-medium text-ivory-50 transition hover:bg-forest-700 disabled:opacity-60"
+                className="group inline-flex items-center gap-3 rounded-full bg-navy-900 px-7 py-4 text-sm font-medium text-ivory-50 transition hover:bg-navy-700 disabled:opacity-60"
               >
                 {step < steps.length - 1 ? "Continue" : status === "sending" ? "Sending…" : "Send my request"}
                 <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>

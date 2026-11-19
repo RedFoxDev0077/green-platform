@@ -62,17 +62,17 @@ export function ConsentManager() {
 
       {ready && choice === null && hasTags && (
         <div className="fixed bottom-3 left-3 right-3 z-[70] sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-sm">
-          <div className="rounded-[2px] bg-forest-950 p-5 text-ivory-50 shadow-2xl ring-1 ring-ivory-50/10">
+          <div className="rounded-[2px] bg-navy-950 p-5 text-ivory-50 shadow-2xl ring-1 ring-ivory-50/10">
             <p className="font-display text-xl">A note on cookies</p>
             <p className="mt-2 text-sm leading-relaxed text-ivory-50/70">
               We use essential cookies to run this site and, only with your permission, analytics cookies
-              to improve it. <Link href="/cookies" className="text-champagne-300 underline">Learn more</Link>.
+              to improve it. <Link href="/cookies" className="text-sand-300 underline">Learn more</Link>.
             </p>
             <div className="mt-4 flex gap-2">
               <button onClick={() => decide("rejected")} className="flex-1 rounded-full px-4 py-2.5 text-sm ring-1 ring-ivory-50/25 transition hover:bg-ivory-50/10">
                 Decline
               </button>
-              <button onClick={() => decide("accepted")} className="flex-1 rounded-full bg-champagne-500 px-4 py-2.5 text-sm font-medium text-forest-950 transition hover:bg-champagne-300">
+              <button onClick={() => decide("accepted")} className="flex-1 rounded-full bg-sand-500 px-4 py-2.5 text-sm font-medium text-navy-950 transition hover:bg-sand-300">
                 Accept
               </button>
             </div>

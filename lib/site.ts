@@ -1,22 +1,22 @@
 /**
- * Central configuration for Green Platform.
+ * Central configuration for Mareterra.
  * Contact details, copy and analytics IDs live here — every component reads from this file.
  */
 
 export const site = {
-  name: "Green Platform",
-  legalName: "Green Platform",
-  tagline: "Private Catering & Fine Dining",
-  slogan: "Haute cuisine, wherever you gather.",
-  domain: "greenplatform.ch",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://greenplatform.ch",
+  name: "Mareterra",
+  legalName: "Mareterra",
+  tagline: "Mediterranean Cuisine & Private Catering",
+  slogan: "The Mediterranean, served wherever you gather.",
+  domain: "mareterra.ch",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mareterra.ch",
   locale: "en_CH",
   description:
-    "Green Platform is a Swiss private catering house crafting refined, seasonal menus for private dinners, weddings, chalet stays and corporate receptions — served with discreet, white-glove care.",
+    "Mareterra brings the sea and the land of the Mediterranean to your table in Switzerland: refined private catering for dinners, weddings, villas and corporate receptions, cooked on site and served with warm, discreet care.",
 
   // Contact — replace with the official details once confirmed by the client.
   contact: {
-    email: "hello@greenplatform.ch",
+    email: "hello@mareterra.ch",
     phone: "", // e.g. "+41 79 000 00 00" — hidden while empty
     area: "Serving all of Switzerland",
     instagram: "", // full URL — hidden while empty
@@ -32,7 +32,7 @@ export const site = {
 export const nav = [
   { label: "Experiences", href: "/#experiences" },
   { label: "Menu", href: "/#menu" },
-  { label: "Philosophy", href: "/#philosophy" },
+  { label: "Our Story", href: "/#philosophy" },
   { label: "Process", href: "/#process" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
